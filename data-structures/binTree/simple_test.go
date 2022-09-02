@@ -17,6 +17,9 @@ func TestCreateAndInsert(t *testing.T) {
 	if root.Right.Value != 1 {
 		t.Errorf("child root not 1")
 	}
+	if &root != root.Left.Parent {
+		t.Errorf("error in parent")
+	}
 }
 
 func TestSearch(t *testing.T) {
